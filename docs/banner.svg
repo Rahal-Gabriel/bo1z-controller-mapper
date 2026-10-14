@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16171a"/>
+      <stop offset="1" stop-color="#0b0b0d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.5" r="0.45">
+      <stop offset="0" stop-color="#c8402c" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#c8402c" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="none"/>
+      <circle cx="1" cy="1" r="0.6" fill="#ffffff" opacity="0.035"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="400" rx="18" fill="url(#bg)"/>
+  <rect width="1280" height="400" rx="18" fill="url(#glow)"/>
+  <rect width="1280" height="400" rx="18" fill="url(#grain)"/>
+  <rect x="72" y="88" width="64" height="6" fill="#c8402c"/>
+
+  <g font-family="Impact, 'Oswald', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" fill="#ecebe7">
+    <text x="72" y="178" font-size="72" font-weight="700" letter-spacing="3">BO1Z</text>
+    <text x="72" y="262" font-size="64" font-weight="700" letter-spacing="2" textLength="760" lengthAdjust="spacingAndGlyphs">CONTROLLER MAPPER</text>
+  </g>
+  <text x="74" y="312" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="24" fill="#9a9890">
+    Qualquer controle no vel.gg/bo1z · Any controller on vel.gg/bo1z
+  </text>
+
+  <!-- controle (desenho original) -->
+  <g transform="translate(985 118) scale(0.82)" fill="none" stroke="#ecebe7" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M60 20 C110 4 190 4 240 20 C270 30 290 70 298 120 C306 170 292 196 262 196 C238 196 224 168 204 150 L96 150 C76 168 62 196 38 196 C8 196 -6 170 2 120 C10 70 30 30 60 20 Z"/>
+    <circle cx="86" cy="78" r="22"/>
+    <circle cx="186" cy="120" r="22" />
+    <path d="M110 112 h14 v-14 h12 v14 h14 v12 h-14 v14 h-12 v-14 h-14 z" stroke-width="4"/>
+    <g stroke="none" fill="#c8402c">
+      <circle cx="232" cy="58" r="10"/>
+      <circle cx="256" cy="82" r="10"/>
+      <circle cx="208" cy="82" r="10" fill="#ecebe7"/>
+      <circle cx="232" cy="106" r="10" fill="#ecebe7"/>
+    </g>
+  </g>
+  <!-- sinais: cru → padrão -->
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="18">
+    <text x="930" y="350" fill="#6f6d67">12 axes · 14 btns · hat</text>
+    <text x="1130" y="350" fill="#c8402c">→ standard</text>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "name": "bo1z-controller-mapper",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Chrome extension that makes any controller work on vel.gg/bo1z by remapping it to the standard (Xbox) gamepad layout",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/remap.test.mjs",
+    "package": "rm -rf dist && mkdir -p dist/bo1z-controller-mapper && cp -r extension/. dist/bo1z-controller-mapper/ && cd dist && zip -qr ../bo1z-controller-mapper.zip bo1z-controller-mapper"
+  }
+}

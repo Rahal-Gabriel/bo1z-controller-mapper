@@ -1,0 +1,46 @@
+:root {
+  --bg: #0f1012;
+  --card: #18191c;
+  --line: #2a2c31;
+  --text: #ecebe7;
+  --muted: #9a9890;
+  --accent: #c8402c;
+  --ok: #5fbf6e;
+  --warn: #e0a83a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { margin: 0; font-size: 26px; letter-spacing: 0.04em; text-transform: uppercase; }
+h2 { margin: 0 0 12px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+.sub { color: var(--muted); margin: 6px 0 24px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.muted { color: var(--muted); font-weight: normal; }
+.big { font-size: 22px; font-weight: 600; margin: 4px 0 6px; }
+.status { min-height: 1.5em; color: var(--ok); font-weight: 600; }
+.warn { color: var(--warn); border-left: 3px solid var(--warn); padding-left: 12px; }
+.ok { color: var(--ok); font-weight: 600; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+button {
+  background: var(--accent); color: #fff; border: 0; border-radius: 6px;
+  padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer;
+}
+button:disabled { opacity: 0.4; cursor: default; }
+button.ghost { background: transparent; border: 1px solid var(--line); color: var(--text); }
+button.danger { color: #f08a7a; }
+select { width: 100%; padding: 8px; margin: 8px 0; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; font: inherit; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.chip { border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; font-size: 13px; transition: background 60ms; }
+.chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.small .chip { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+.axes { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 10px; }
+.axis label { font-size: 13px; color: var(--muted); }
+.bar { position: relative; height: 10px; background: var(--bg); border: 1px solid var(--line); border-radius: 5px; }
+.bar i { position: absolute; top: -1px; bottom: -1px; width: 4px; margin-left: -2px; background: var(--accent); border-radius: 2px; left: 50%; }
+.raw summary { cursor: pointer; color: var(--muted); }
