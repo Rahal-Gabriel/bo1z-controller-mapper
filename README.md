@@ -2,147 +2,151 @@
 
 <img src="docs/banner.svg" width="860" alt="BO1Z Controller Mapper">
 
-### Seu controle não funciona no [vel.gg/bo1z](https://vel.gg/bo1z/)? Agora funciona.
+### Your controller doesn't work on [vel.gg/bo1z](https://vel.gg/bo1z/)? Now it does.
 
-Extensão gratuita para Chrome que ensina **qualquer controle** (Switch, PowerA, genéricos, 8BitDo…) a falar "Xbox" para o Black Ops 1 Zombies no navegador. Você mapeia uma vez, fica salvo.
+A free Chrome extension that teaches **any controller** (Switch, PowerA, generic, 8BitDo…) to speak "Xbox" to Black Ops 1 Zombies in the browser. Map it once, it stays saved.
 
 [![Download](https://img.shields.io/github/v/release/Rahal-Gabriel/bo1z-controller-mapper?label=download&color=c8402c&style=for-the-badge)](https://github.com/Rahal-Gabriel/bo1z-controller-mapper/releases/latest/download/bo1z-controller-mapper.zip)
 ![Chrome](https://img.shields.io/badge/Chrome-Edge-f4c542?style=for-the-badge&logo=googlechrome&logoColor=white)
-![Co-op](https://img.shields.io/badge/funciona%20com-BO1%20Zombies%20Co--op-63d471?style=for-the-badge)
-![License](https://img.shields.io/badge/licença-MIT-5aa8ff?style=for-the-badge)
+![Co-op](https://img.shields.io/badge/works%20with-BO1%20Zombies%20Co--op-63d471?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-5aa8ff?style=for-the-badge)
 
-### [⬇ Baixar a extensão](https://github.com/Rahal-Gabriel/bo1z-controller-mapper/releases/latest/download/bo1z-controller-mapper.zip)
+### [⬇ Download the extension](https://github.com/Rahal-Gabriel/bo1z-controller-mapper/releases/latest/download/bo1z-controller-mapper.zip)
 
-**Português** · [English](#english)
+**English** · [Português](#português)
 
 </div>
 
 ---
 
-## 🎮 O problema
+## 🎮 The problem
 
-O vel.gg tem suporte a controle, mas só entende controles no **formato padrão** (layout de Xbox). Muitos controles chegam ao Chrome em **formato cru** — principalmente no **Mac** e com controles de **Switch** e genéricos:
+vel.gg supports controllers, but only ones reported in the **standard** Gamepad layout (Xbox style). Many controllers reach Chrome in a **raw** layout instead — especially on **macOS** with **Switch-style** and generic pads:
 
-| | Controle de Xbox / PS | Controle "cru" (ex.: PowerA de Switch no Mac) |
+| | Xbox / PlayStation pad | "Raw" pad (e.g. PowerA Switch controller on Mac) |
 |---|---|---|
-| Formato | `standard` | *(vazio)* |
-| Eixos | 4 | 12 |
-| Botões | 17 | 14 |
-| Direcional | 4 botões | 1 eixo "hat" |
-| No vel.gg | ✅ funciona | ❌ o navegador vê o controle, o jogo ignora |
+| Mapping | `standard` | *(empty)* |
+| Axes | 4 | 12 |
+| Buttons | 17 | 14 |
+| D-pad | 4 buttons | 1 "hat" axis |
+| On vel.gg | ✅ works | ❌ the browser sees it, the game ignores it |
 
-Sintoma clássico: o site de teste mostra o controle **conectado**, mas no jogo **nada acontece**.
+Classic symptom: a gamepad tester shows the controller as **connected**, but in game **nothing happens**.
 
-## ✨ A solução
+## ✨ The fix
 
-<img src="docs/wizard-test.png" width="560" align="right" alt="Tela de teste do assistente mostrando o que o jogo vai receber">
+<img src="docs/wizard-test.png" width="560" align="right" alt="Wizard test screen showing exactly what the game will receive">
 
-- **Assistente passo a passo:** "aperte B", "empurre o analógico direito para a direita"… e pronto.
-- **Salva sozinho** — faz uma vez só.
-- **Tela de teste ao vivo** mostrando exatamente o que o jogo vai receber.
-- **Corrige analógico descentralizado** (drift) e aceita **diagonais** no direcional.
-- **Diagnóstico embutido:** mostra o sinal cru do controle e avisa se o seu sistema não está mandando os botões.
-- **Funciona com e sem** a extensão [BO1 Zombies Co-op](https://github.com/AllanLotta/bo1-zombies-coop).
-- Leve: nenhum servidor, nenhum dado sai do seu navegador. Só mexe no vel.gg.
+- **Step-by-step wizard:** "press B", "push the right stick to the right"… done.
+- **Saves automatically** — you only do it once.
+- **Live test screen** showing exactly what the game will receive.
+- **Fixes off-centre sticks** (drift) and supports **D-pad diagonals**.
+- **Built-in diagnostics:** shows the raw controller signal and warns you if your system isn't sending button presses.
+- **Works with or without** the [BO1 Zombies Co-op](https://github.com/AllanLotta/bo1-zombies-coop) extension.
+- Lightweight: no servers, no data leaves your browser. Only touches vel.gg.
 
 <br clear="right">
 
-## 📦 Instalar (2 minutos)
+## 📦 Install (2 minutes)
 
-1. **[Baixe o zip](https://github.com/Rahal-Gabriel/bo1z-controller-mapper/releases/latest/download/bo1z-controller-mapper.zip)** e descompacte. Deixe a pasta `bo1z-controller-mapper` num lugar fixo (o Chrome continua usando ela).
-2. Cole `chrome://extensions` na barra de endereço e ligue o **Modo do desenvolvedor** (canto superior direito).
-3. Clique em **Carregar sem compactação** e escolha a pasta (a que tem o `manifest.json` dentro).
-4. O assistente abre sozinho. 🎉
+1. **[Download the zip](https://github.com/Rahal-Gabriel/bo1z-controller-mapper/releases/latest/download/bo1z-controller-mapper.zip)** and unzip it. Keep the `bo1z-controller-mapper` folder somewhere permanent (Chrome keeps using it).
+2. Paste `chrome://extensions` into the address bar and switch on **Developer mode** (top right).
+3. Click **Load unpacked** and pick the folder (the one with `manifest.json` inside).
+4. The wizard opens on its own. 🎉
 
-> O Chrome pode mostrar um aviso sobre extensões em modo desenvolvedor ao abrir — é normal, só fechar.
+> Chrome may show a popup about developer-mode extensions when it starts — that's normal, just close it.
+>
+> The wizard interface is currently in Brazilian Portuguese. Each step tells you which button to press and where it is, so it's easy to follow either way.
 
-## 🕹️ Usar
+## 🕹️ Use
 
-1. Conecte o controle e **mexa um analógico** para ele aparecer no assistente.
-2. Clique em **Começar mapeamento**, solte o controle por um segundo e siga os passos.
-3. Confira na **tela de teste** se cada botão acende o quadradinho certo.
-4. Abra (ou **recarregue**) o [vel.gg/bo1z](https://vel.gg/bo1z/), clique no jogo e aperte um botão.
+1. Plug in your controller and **move a stick** so it shows up in the wizard.
+2. Click **Começar mapeamento** (start mapping), let go of the controller for a second, then follow the prompts.
+3. On the **test screen**, check that each button lights up the right box.
+4. Open (or **reload**) [vel.gg/bo1z](https://vel.gg/bo1z/), click the game and press a button.
 
-Para reabrir o assistente: clique no ícone da extensão.
+To reopen the wizard later, click the extension icon.
 
-### Botões no jogo (controle de Switch)
+### In-game buttons (Switch controller)
 
-| Switch | Vira (Xbox) | No jogo |
+| Switch | Becomes (Xbox) | In game |
 |---|---|---|
-| **B** (baixo) | A | Pular |
-| **A** (direita) | B | Agachar |
-| **Y** (esquerda) | X | Recarregar · **segurar** = usar, comprar, **reparar barreira**, reviver |
-| **X** (cima) | Y | Trocar arma |
-| **ZR / ZL** | RT / LT | Atirar / mirar |
-| **R / L** | RB / LB | Granada / granada tática |
-| Clique analógico esq. / dir. | L3 / R3 | Correr / faca |
-| **+ / −** | Start / Back | Pausar / placar |
+| **B** (bottom) | A | Jump |
+| **A** (right) | B | Crouch |
+| **Y** (left) | X | Reload · **hold** = use, buy, **repair barriers**, revive |
+| **X** (top) | Y | Switch weapon |
+| **ZR / ZL** | RT / LT | Fire / aim |
+| **R / L** | RB / LB | Grenade / tactical grenade |
+| Left / right stick click | L3 / R3 | Sprint / knife |
+| **+ / −** | Start / Back | Pause / scoreboard |
 
-## ⚙️ Como funciona
+## ⚙️ How it works
 
 ```mermaid
 flowchart LR
-    A["🎮 Controle<br/>formato cru"] --> B["navigator.getGamepads()"]
-    B --> C{"BO1Z Controller Mapper<br/>(seu mapeamento)"}
-    C --> D["Controle virtual<br/>layout padrão Xbox"]
+    A["🎮 Controller<br/>raw layout"] --> B["navigator.getGamepads()"]
+    B --> C{"BO1Z Controller Mapper<br/>(your mapping)"}
+    C --> D["Virtual controller<br/>standard Xbox layout"]
     D --> E["vel.gg/bo1z"]
-    D --> F["Extensão Co-op<br/>(opcional)"]
+    D --> F["Co-op extension<br/>(optional)"]
 ```
 
-A extensão intercepta `navigator.getGamepads()` só na página do vel.gg e devolve o seu controle já traduzido para o [layout padrão do Gamepad API](https://w3c.github.io/gamepad/#remapping). O jogo e a extensão de co-op leem o controle a cada frame, então tudo "enxerga" um controle de Xbox comum — sem modificar nenhum dos dois.
+The extension intercepts `navigator.getGamepads()` on vel.gg only and returns your controller already translated to the [standard Gamepad API layout](https://w3c.github.io/gamepad/#remapping). The game and the co-op extension read the controller every frame, so everything sees a regular Xbox pad — without modifying either of them.
 
-## 🩺 Problemas
+## 🩺 Troubleshooting
 
 <details>
-<summary><b>O assistente não detecta os botões, só os analógicos</b></summary>
+<summary><b>The wizard detects the sticks but not the buttons</b></summary>
 
-Abra **"Sinal cru do controle"** no assistente. Se os `B0`, `B1`… nunca acendem ao apertar, o sistema não está repassando os botões desse controle para o Chrome — aí nenhum mapeamento resolve. Tente desconectar e reconectar o cabo e apertar o **Home**. Se continuar, use um app que transforme o controle em teclado/mouse.
+Open **"Sinal cru do controle"** (raw controller signal) in the wizard. If `B0`, `B1`… never light up when you press buttons, your system isn't passing that controller's buttons to Chrome, and no mapping can fix that. Try unplugging and replugging the cable and pressing **Home**. If it still doesn't work, use an app that turns the controller into keyboard/mouse input.
 </details>
 
 <details>
-<summary><b>Os botões ficaram trocados</b></summary>
+<summary><b>Buttons are swapped</b></summary>
 
-Provavelmente algum passo foi feito com o botão errado. Clique em **Refazer mapeamento** — os passos dizem a letra do Switch e a posição do botão.
+A step was probably done with the wrong button. Click **Refazer mapeamento** (redo mapping) — each step shows the Switch letter and the button's position.
 </details>
 
 <details>
-<summary><b>No jogo nada acontece</b></summary>
+<summary><b>Nothing happens in game</b></summary>
 
-Recarregue a página do vel.gg depois de mapear, clique no jogo e aperte um botão do controle. No console do DevTools deve aparecer `[BO1Z Controller Mapper] mapeamento ativo para: …`.
+Reload the vel.gg page after mapping, click the game and press a controller button. The DevTools console should show `[BO1Z Controller Mapper] mapeamento ativo para: …`.
 </details>
 
-## 🛠️ Desenvolvimento
+## 🛠️ Development
 
 ```bash
-npm test          # testa a captura e a tradução com um controle simulado
-npm run package   # gera o zip da extensão
+npm test          # tests capture and translation with a simulated raw controller
+npm run package   # builds the extension zip
 ```
 
-Estrutura: `extension/remap-core.js` (tradução), `extension/capture.js` (lógica do assistente), `extension/remap.js` (injetado no vel.gg), `extension/wizard.*` (assistente). Sem dependências.
+Layout: `extension/remap-core.js` (translation), `extension/capture.js` (wizard logic), `extension/remap.js` (injected into vel.gg), `extension/wizard.*` (wizard UI). No dependencies.
 
-PRs e issues são bem-vindos — principalmente relatos de controles testados.
-
----
-
-<a name="english"></a>
-
-## 🇺🇸 English
-
-**Your controller doesn't work on [vel.gg/bo1z](https://vel.gg/bo1z/)? Now it does.**
-
-vel.gg only understands controllers reported in the **standard** (Xbox) Gamepad layout. Many pads — especially **Switch-style and generic controllers on macOS** — reach Chrome in a **raw** layout (e.g. 12 axes, 14 buttons, D-pad as a "hat" axis). The browser sees them, the game ignores them.
-
-This free Chrome extension fixes that:
-
-- A **step-by-step wizard** records your controller once and saves it.
-- On vel.gg it intercepts `navigator.getGamepads()` and hands the game a **virtual standard pad**.
-- Fixes off-centre sticks, supports D-pad diagonals, includes a live test screen and raw-signal diagnostics.
-- Works **with or without** [BO1 Zombies Co-op](https://github.com/AllanLotta/bo1-zombies-coop). No servers, no data leaves your browser.
-
-**Install:** [download the zip](https://github.com/Rahal-Gabriel/bo1z-controller-mapper/releases/latest/download/bo1z-controller-mapper.zip), unzip it, open `chrome://extensions`, enable **Developer mode**, click **Load unpacked** and pick the folder. The wizard opens on its own (UI in Brazilian Portuguese).
-
-**Use:** move a stick so the pad shows up → **Começar mapeamento** (start mapping) → follow the prompts → check the test screen → reload vel.gg/bo1z and press a button.
+Issues and PRs are welcome — especially reports of controllers you've tested.
 
 ---
 
-<sub>Projeto de fã, sem afiliação com Activision, Treyarch ou vel.gg. Call of Duty e Black Ops são marcas da Activision. · Fan project, not affiliated with Activision, Treyarch or vel.gg.</sub>
+<a name="português"></a>
+
+## 🇧🇷 Português
+
+**Seu controle não funciona no [vel.gg/bo1z](https://vel.gg/bo1z/)? Agora funciona.**
+
+O vel.gg só entende controles no formato **padrão** (layout de Xbox). Muitos controles — principalmente **de Switch e genéricos no Mac** — chegam ao Chrome em formato **cru** (ex.: 12 eixos, 14 botões, direcional como eixo "hat"). O navegador vê o controle, mas o jogo ignora.
+
+Esta extensão gratuita resolve:
+
+- Um **assistente passo a passo** registra o seu controle uma vez e salva.
+- No vel.gg, ela intercepta o `navigator.getGamepads()` e entrega ao jogo um **controle virtual no formato padrão**.
+- Corrige analógico descentralizado, aceita diagonais no direcional, tem tela de teste ao vivo e diagnóstico do sinal cru.
+- Funciona **com e sem** a extensão [BO1 Zombies Co-op](https://github.com/AllanLotta/bo1-zombies-coop). Nenhum servidor, nenhum dado sai do navegador.
+
+**Instalar:** [baixe o zip](https://github.com/Rahal-Gabriel/bo1z-controller-mapper/releases/latest/download/bo1z-controller-mapper.zip), descompacte, abra `chrome://extensions`, ligue o **Modo do desenvolvedor**, clique em **Carregar sem compactação** e escolha a pasta. O assistente abre sozinho.
+
+**Usar:** mexa um analógico para o controle aparecer → **Começar mapeamento** → siga os passos → confira na tela de teste → recarregue o vel.gg/bo1z e aperte um botão.
+
+**Reparar barreiras:** segure o **Y** (Switch), que vira o X do Xbox: usar / reparar / recarregar.
+
+---
+
+<sub>Fan project, not affiliated with Activision, Treyarch or vel.gg. Call of Duty and Black Ops are trademarks of Activision. · Projeto de fã, sem afiliação com Activision, Treyarch ou vel.gg.</sub>
