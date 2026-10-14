@@ -3,30 +3,11 @@
   const cap = globalThis.BO1Capture;
   const $ = (id) => document.getElementById(id);
 
-  // Passos no layout padrão (Xbox). Nomes dos botões pela POSIÇÃO, com o nome no Switch entre parênteses.
-  const STEPS = [
-    { kind: "axis", target: 0, label: "Analógico ESQUERDO para a DIREITA", help: "Empurre até o fim e segure." },
-    { kind: "axis", target: 1, label: "Analógico ESQUERDO para BAIXO", help: "Empurre até o fim e segure." },
-    { kind: "axis", target: 2, label: "Analógico DIREITO para a DIREITA", help: "Empurre até o fim e segure." },
-    { kind: "axis", target: 3, label: "Analógico DIREITO para BAIXO", help: "Empurre até o fim e segure." },
-    { kind: "button", target: 0, label: "Aperte B (Switch)", help: "O botão de baixo dos 4 botões da direita · no Xbox seria o A — no jogo: pular" },
-    { kind: "button", target: 1, label: "Aperte A (Switch)", help: "O botão da direita dos 4 botões da direita · no Xbox seria o B — no jogo: agachar" },
-    { kind: "button", target: 2, label: "Aperte Y (Switch)", help: "O botão da esquerda dos 4 botões da direita · no Xbox seria o X — no jogo: usar / reparar / recarregar (segurar = usar)" },
-    { kind: "button", target: 3, label: "Aperte X (Switch)", help: "O botão de cima dos 4 botões da direita · no Xbox seria o Y — no jogo: trocar arma" },
-    { kind: "button", target: 4, label: "L (ombro esquerdo)", help: "No jogo: granada tática" },
-    { kind: "button", target: 5, label: "R (ombro direito)", help: "No jogo: granada" },
-    { kind: "button", target: 6, label: "ZL (gatilho esquerdo)", help: "No jogo: mirar" },
-    { kind: "button", target: 7, label: "ZR (gatilho direito)", help: "No jogo: atirar" },
-    { kind: "button", target: 8, label: "Botão −", help: "No jogo: placar" },
-    { kind: "button", target: 9, label: "Botão +", help: "No jogo: pausar" },
-    { kind: "button", target: 10, label: "CLIQUE do analógico esquerdo", help: "Aperte o analógico para dentro — no jogo: correr" },
-    { kind: "button", target: 11, label: "CLIQUE do analógico direito", help: "Aperte o analógico para dentro — no jogo: faca" },
-    { kind: "button", target: 12, label: "Direcional para CIMA", help: "" },
-    { kind: "button", target: 13, label: "Direcional para BAIXO", help: "" },
-    { kind: "button", target: 14, label: "Direcional para a ESQUERDA", help: "" },
-    { kind: "button", target: 15, label: "Direcional para a DIREITA", help: "" },
-    { kind: "button", target: 16, label: "Botão HOME", help: "Opcional — pode pular" },
-  ];
+  const { t, dict } = globalThis.BO1I18n;
+  // Steps in the standard (Xbox) layout: 4 stick axes, then the 17 standard buttons. Text comes from i18n.js.
+  const STEPS = dict.steps.map(([label, help], k) =>
+    k < 4 ? { kind: "axis", target: k, label, help: t("holdStick") } : { kind: "button", target: k - 4, label, help }
+  );
   const STD_NAMES = ["A", "B", "X", "Y", "LB", "RB", "LT", "RT", "Back", "Start", "L3", "R3", "↑", "↓", "←", "→", "Home"];
 
   let padIndex = null;
@@ -51,7 +32,7 @@
     for (const p of pads) {
       const o = document.createElement("option");
       o.value = p.index;
-      o.textContent = `#${p.index} — ${p.id}${p.mapping === "standard" ? "" : " (formato cru)"}`;
+      o.textContent = `#${p.index} — ${p.id}${p.mapping === "standard" ? "" : ` (${t("rawLayout")})`}`;
       sel.appendChild(o);
     }
     sel.hidden = pads.length === 0;
@@ -70,7 +51,7 @@
     $("savedInfo").hidden = !has;
     $("testBtn").hidden = !has;
     $("clearBtn").hidden = !has;
-    if (has) $("savedInfo").textContent = `Mapeamento salvo para: ${saved.padId}`;
+    if (has) $("savedInfo").textContent = t("savedFor", { name: saved.padId });
   }
 
   function usedSet(upTo) {
@@ -105,7 +86,7 @@
     const s = STEPS[stepIdx];
     $("restBox").hidden = true;
     $("stepBox").hidden = false;
-    $("progress").textContent = `(${stepIdx + 1} de ${STEPS.length})`;
+    $("progress").textContent = t("progress", { n: stepIdx + 1, total: STEPS.length });
     $("stepLabel").textContent = s.label;
     $("stepHelp").textContent = s.help;
     $("stepStatus").textContent = "";
@@ -152,7 +133,7 @@
     });
     const va = $("vAxes");
     va.innerHTML = "";
-    ["Esq. X", "Esq. Y", "Dir. X", "Dir. Y"].forEach((n) => {
+    dict.axes.forEach((n) => {
       const d = document.createElement("div");
       d.className = "axis";
       d.innerHTML = `<label>${n}</label><div class="bar"><i></i></div>`;
@@ -201,7 +182,7 @@
         const src = cap.detect(snap, rest, step, usedSet(stepIdx));
         if (src) {
           results[stepIdx] = src;
-          $("stepStatus").textContent = "Pegou! Agora solte…";
+          $("stepStatus").textContent = t("got");
           releaseSince = 0;
           mode = "wait-release";
         } else if (step.kind === "button" && !buttonsEverSeen && now - stepStartedAt > 10000) {

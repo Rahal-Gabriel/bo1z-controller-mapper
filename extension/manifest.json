@@ -2,22 +2,40 @@
   "manifest_version": 3,
   "name": "BO1Z Controller Mapper (vel.gg)",
   "short_name": "BO1Z Controller",
-  "version": "1.0.1",
-  "description": "Mapeia qualquer controle (Switch, genéricos) para o formato padrão de Xbox no vel.gg/bo1z. Funciona junto com a extensão BO1 Zombies Co-op.",
-  "permissions": ["storage"],
-  "background": { "service_worker": "background.js" },
-  "action": { "default_title": "Mapear controle" },
-  "options_ui": { "page": "wizard.html", "open_in_tab": true },
+  "version": "1.1.0",
+  "description": "Makes any controller (Switch, generic, raw layout) work on vel.gg/bo1z by remapping it to the standard Xbox layout. Works with the BO1 Zombies Co-op extension.",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Map controller"
+  },
+  "options_ui": {
+    "page": "wizard.html",
+    "open_in_tab": true
+  },
   "content_scripts": [
     {
-      "matches": ["https://vel.gg/*"],
-      "js": ["bridge.js"],
+      "matches": [
+        "https://vel.gg/*"
+      ],
+      "js": [
+        "bridge.js"
+      ],
       "run_at": "document_start",
       "all_frames": true
     },
     {
-      "matches": ["https://vel.gg/*"],
-      "js": ["remap-core.js", "remap.js"],
+      "matches": [
+        "https://vel.gg/*"
+      ],
+      "js": [
+        "remap-core.js",
+        "remap.js"
+      ],
       "run_at": "document_start",
       "world": "MAIN",
       "all_frames": true

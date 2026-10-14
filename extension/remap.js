@@ -21,7 +21,7 @@
       } catch {
         map = null;
       }
-      if (map) console.info("[BO1Z Controller Mapper] mapeamento ativo para:", map.padId);
+      if (map) console.info("[BO1Z Controller Mapper] mapping active for:", map.padId);
     }
     return map;
   }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,57 +10,54 @@
 <main>
   <header>
     <h1>BO1Z Controller Mapper</h1>
-    <p class="sub">Ensina o seu controle a falar "Xbox" para o vel.gg/bo1z. Você faz uma vez; fica salvo.</p>
+    <p class="sub" data-i18n="subtitle"></p>
   </header>
 
   <section id="pick" class="card">
-    <h2>1. Controle</h2>
-    <p id="pickHint">Conecte o controle e <b>mexa um analógico ou aperte um botão</b> para ele aparecer aqui.</p>
+    <h2 data-i18n="controllerTitle"></h2>
+    <p id="pickHint" data-i18n-html="pickHint"></p>
     <select id="padSelect" hidden></select>
     <p id="savedInfo" class="muted" hidden></p>
     <div class="row">
-      <button id="startBtn" disabled>Começar mapeamento</button>
-      <button id="testBtn" class="ghost" hidden>Testar mapeamento salvo</button>
-      <button id="clearBtn" class="ghost danger" hidden>Apagar mapeamento</button>
+      <button id="startBtn" disabled data-i18n="start"></button>
+      <button id="testBtn" class="ghost" hidden data-i18n="testSaved"></button>
+      <button id="clearBtn" class="ghost danger" hidden data-i18n="clear"></button>
     </div>
   </section>
 
   <section id="wizard" class="card" hidden>
-    <h2>2. Mapeamento <span id="progress" class="muted"></span></h2>
+    <h2><span data-i18n="mappingTitle"></span> <span id="progress" class="muted"></span></h2>
     <div id="restBox" hidden>
-      <p class="big">Solte o controle — não encoste em nada…</p>
+      <p class="big" data-i18n="rest"></p>
     </div>
     <div id="stepBox" hidden>
       <p class="big" id="stepLabel"></p>
       <p class="muted" id="stepHelp"></p>
       <p id="stepStatus" class="status"></p>
       <div class="row">
-        <button id="backBtn" class="ghost">Voltar</button>
-        <button id="skipBtn" class="ghost">Pular este</button>
-        <button id="cancelBtn" class="ghost danger">Cancelar</button>
+        <button id="backBtn" class="ghost" data-i18n="back"></button>
+        <button id="skipBtn" class="ghost" data-i18n="skip"></button>
+        <button id="cancelBtn" class="ghost danger" data-i18n="cancel"></button>
       </div>
     </div>
-    <p id="noButtons" class="warn" hidden>
-      Nenhum botão do controle chegou ao Chrome até agora (só os analógicos). Se você está apertando e nada acontece,
-      o Mac não está repassando os botões desse controle para o navegador — aí o mapeamento não resolve, e o caminho é
-      um app que transforma o controle em teclado/mouse. Tente antes: desconectar e reconectar o cabo, e apertar o Home.
-    </p>
+    <p id="noButtons" class="warn" hidden data-i18n="noButtons"></p>
   </section>
 
   <section id="test" class="card" hidden>
-    <h2>3. Teste <span class="muted">— o que o jogo vai receber</span></h2>
-    <p class="ok" id="savedMsg" hidden>Mapeamento salvo. Abra (ou recarregue) o vel.gg/bo1z e jogue.</p>
+    <h2><span data-i18n="testTitle"></span> <span class="muted" data-i18n="testSub"></span></h2>
+    <p class="ok" id="savedMsg" hidden data-i18n="saved"></p>
     <div id="vButtons" class="chips"></div>
     <div id="vAxes" class="axes"></div>
-    <div class="row"><button id="redoBtn" class="ghost">Refazer mapeamento</button></div>
+    <div class="row"><button id="redoBtn" class="ghost" data-i18n="redo"></button></div>
   </section>
 
   <details class="card raw">
-    <summary>Sinal cru do controle (diagnóstico)</summary>
+    <summary data-i18n="raw"></summary>
     <div id="rawButtons" class="chips small"></div>
     <div id="rawAxes" class="chips small"></div>
   </details>
 </main>
+<script src="i18n.js"></script>
 <script src="remap-core.js"></script>
 <script src="capture.js"></script>
 <script src="wizard.js"></script>

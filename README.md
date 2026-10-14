@@ -43,6 +43,7 @@ Classic symptom: a gamepad tester shows the controller as **connected**, but in 
 - **Fixes off-centre sticks** (drift) and supports **D-pad diagonals**.
 - **Built-in diagnostics:** shows the raw controller signal and warns you if your system isn't sending button presses.
 - **Works with or without** the [BO1 Zombies Co-op](https://github.com/AllanLotta/bo1-zombies-coop) extension.
+- **English and Portuguese**, picked from your browser language.
 - Lightweight: no servers, no data leaves your browser. Only touches vel.gg.
 
 <br clear="right">
@@ -56,12 +57,12 @@ Classic symptom: a gamepad tester shows the controller as **connected**, but in 
 
 > Chrome may show a popup about developer-mode extensions when it starts — that's normal, just close it.
 >
-> The wizard interface is currently in Brazilian Portuguese. Each step tells you which button to press and where it is, so it's easy to follow either way.
+> The wizard speaks **English** or **Portuguese**, picked automatically from your browser language.
 
 ## 🕹️ Use
 
 1. Plug in your controller and **move a stick** so it shows up in the wizard.
-2. Click **Começar mapeamento** (start mapping), let go of the controller for a second, then follow the prompts.
+2. Click **Start mapping**, let go of the controller for a second, then follow the prompts.
 3. On the **test screen**, check that each button lights up the right box.
 4. Open (or **reload**) [vel.gg/bo1z](https://vel.gg/bo1z/), click the game and press a button.
 
@@ -98,19 +99,19 @@ The extension intercepts `navigator.getGamepads()` on vel.gg only and returns yo
 <details>
 <summary><b>The wizard detects the sticks but not the buttons</b></summary>
 
-Open **"Sinal cru do controle"** (raw controller signal) in the wizard. If `B0`, `B1`… never light up when you press buttons, your system isn't passing that controller's buttons to Chrome, and no mapping can fix that. Try unplugging and replugging the cable and pressing **Home**. If it still doesn't work, use an app that turns the controller into keyboard/mouse input.
+Open **"Raw controller signal"** in the wizard. If `B0`, `B1`… never light up when you press buttons, your system isn't passing that controller's buttons to Chrome, and no mapping can fix that. Try unplugging and replugging the cable and pressing **Home**. If it still doesn't work, use an app that turns the controller into keyboard/mouse input.
 </details>
 
 <details>
 <summary><b>Buttons are swapped</b></summary>
 
-A step was probably done with the wrong button. Click **Refazer mapeamento** (redo mapping) — each step shows the Switch letter and the button's position.
+A step was probably done with the wrong button. Click **Redo mapping** — each step shows the Switch letter and the button's position.
 </details>
 
 <details>
 <summary><b>Nothing happens in game</b></summary>
 
-Reload the vel.gg page after mapping, click the game and press a controller button. The DevTools console should show `[BO1Z Controller Mapper] mapeamento ativo para: …`.
+Reload the vel.gg page after mapping, click the game and press a controller button. The DevTools console should show `[BO1Z Controller Mapper] mapping active for: …`.
 </details>
 
 ## 🛠️ Development
